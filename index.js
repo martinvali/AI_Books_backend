@@ -15,6 +15,7 @@ app.post("/page", async (req, res) => {
   const { topic, page } = req.body;
   const text = await getBookPage(topic, page);
 
+  res.setHeader("Content-Type", "application/json");
   return res.json(text);
 });
 
