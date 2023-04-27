@@ -2,7 +2,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
 const bodyParser = require("body-parser");
-const getBookpage = require("./helpers/getBookpage");
+const getBookpage = require("/helpers/getBookpage");
 
 const app = express();
 
