@@ -5,7 +5,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-async function getBookpage(topic, page, curPage = "") {
+async function getBookPage(topic, page, curPage = "") {
   let prompt;
   if (page === 1) {
     prompt = `Write the introductory page of a children's book about ${topic}. In terms of length, it should be between 50 and 100 words.`;
@@ -25,4 +25,4 @@ async function getBookpage(topic, page, curPage = "") {
   return completion.data.choices;
 }
 
-module.exports = getBookpage;
+module.exports = getBookPage;

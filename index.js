@@ -2,8 +2,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
 const bodyParser = require("body-parser");
-const getBookpage = require("./helpers/getBookPage.js");
-
+const getBookPage = require("./helpers/getBookPage");
 const app = express();
 
 app.use(
@@ -14,7 +13,7 @@ app.use(
 
 app.post("/page", async (req, res) => {
   const { topic, page } = req.body;
-  const text = await getBookpage(topic, page);
+  const text = await getBookPage(topic, page);
 
   return res.json(text);
 });
