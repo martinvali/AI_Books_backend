@@ -24,7 +24,7 @@ app.post("/page", async (req, res) => {
   const text = await getBookPage(topic, page, curText);
 
   res.setHeader("Content-Type", "application/json");
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
   res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
 
   return res.json(text);
