@@ -15,7 +15,7 @@ app.use(
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://aibooks.netlify.app/"],
   })
 );
 
@@ -31,7 +31,7 @@ app.post("/page", async (req, res) => {
   }
   const text = await getBookPage(topic, page, curText);
 
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.setHeader("Access-Control-Allow-Origin", req.headers.origin);
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
