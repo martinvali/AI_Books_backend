@@ -6,7 +6,7 @@ const configuration = new Configuration({
 
 
 async function getPicture(text) {
-    let type = `Make a photo based on the following text: ${text}`
+    let type = `Make a childish cartoon picture about ${text}. Make it as colorful as possible.`
     const openai = new OpenAIApi(configuration);
     const res = await openai.createImage({
       prompt:type,
