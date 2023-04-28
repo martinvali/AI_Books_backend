@@ -12,8 +12,14 @@ app.use(
 );
 
 app.post("/page", async (req, res) => {
+  let curText = "";
   const { topic, page } = req.body;
-  const text = await getBookPage(topic, page);
+  console.log(req.body);
+
+  if (req.body.curText) {
+    curText = req.body.curText;
+  }
+  const text = await getBookPage(topic, page, curText);
 
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Access-Control-Allow-Origin", "*");
