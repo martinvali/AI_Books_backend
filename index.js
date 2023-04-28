@@ -11,6 +11,8 @@ app.use(
   })
 );
 
+app.use(express.json());
+
 app.post("/page", async (req, res) => {
   let curText = "";
   const { topic, page } = req.body;
