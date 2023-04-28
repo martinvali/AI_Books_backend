@@ -25,6 +25,8 @@ app.post("/page", async (req, res) => {
 
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+
   return res.json(text);
 });
 
