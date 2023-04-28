@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const bodyParser = require("body-parser");
-const getBookpage = require("./helpers/getBookpage");
+const getBookPage = require("./helpers/getBookPage");
 const getPicture = require("./helpers/getPicture")
 const express = require("express");
 const app = express();
