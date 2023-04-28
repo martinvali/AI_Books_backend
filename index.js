@@ -4,10 +4,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const getBookPage = require("./helpers/getBookPage");
 const app = express();
+const cors = require("cors");
 
 app.use(
   bodyParser.urlencoded({
     extended: true,
+  })
+);
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
   })
 );
 
@@ -23,9 +30,12 @@ app.post("/page", async (req, res) => {
   }
   const text = await getBookPage(topic, page, curText);
 
-  res.setHeader("Content-Type", "application/json");
+  /*res.setHeader("Content-Type", "application/json");
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With, Content-Type"
+  );*/
 
   return res.json(text);
 });
